@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {{>headers}}
+    <title>Cadastrar Novo Produto</title>
+</head>
+<body>
+    {{>navbar}}
+    <div class="d-flex justify-content-center">
+        <div class="form-group">
+            <form method="get" action="/produtos/cadastrar">
+                <input type="hidden" name="id" value="0">
+
+                <label for="nome">Nome:</label>
+                <input class="form-control" type="text" id="nome" name="nome" value="">
+
+                <label for="descricao">Descrição:</label>
+                <input class="form-control" type="text" id="descricao" name="descricao" value="">
+
+                <label for="estoque">Estoque:</label>
+                <input class="form-control" type="number" step="any" id="estoque" name="estoque" value="">
+
+                <label for="und_medida">Unidade de Medida:</label>
+                <input class="form-control" type="text" id="und_medida" name="und_medida" value="">
+
+                <label for="valor_unitario">Valor Unitário:</label>
+                <input class="form-control" type="number" step="any" id="valor_unitario" name="valor_unitario" value="">
+
+                <br>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

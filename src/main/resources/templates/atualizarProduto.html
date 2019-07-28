@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {{>headers}}
+    <title>Atualizar Produto</title>
+</head>
+<body>
+    {{>navbar}}
+    <div class="d-flex justify-content-center">
+        <div class="form-group">
+            <form method="get" action="/produtos/cadastrar">
+                <input type="hidden" name="id" value="{{id}}">
+
+                <label for="nome">Nome:</label>
+                <input class="form-control" type="text" id="nome" name="nome" value="{{nome}}">
+
+                <label for="descricao">Descrição:</label>
+                <input class="form-control" type="text" id="descricao" name="descricao" value="{{descricao}}">
+
+                <label for="estoque">Estoque:</label>
+                <input class="form-control" type="number" step="any" id="estoque" name="estoque" value="{{estoque}}">
+
+                <label for="und_medida">Unidade de Medida:</label>
+                <input class="form-control" type="text" id="und_medida" name="und_medida" value="{{und_medida}}">
+
+                <label for="valor_unitario">Valor Unitário:</label>
+                <input class="form-control" type="number" step="any" id="valor_unitario" name="valor_unitario" value="{{valor_unitario}}">
+
+                <br>
+                <input type="submit" value="Atualizar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
