@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -31,9 +32,15 @@ public class ProdutoApiResource {
     }
 
     @GetMapping("/produtos/nome/{nome}")
-    @ApiOperation(value = "Retorna um produto do estoque")
+    @ApiOperation(value = "Retorna uma lista de produtos com base no nome do produto")
     public Produto listaProduto(@PathVariable(value = "nome") String nome) {
         return produtoRepository.findByNome(nome);
+    }
+
+    @GetMapping("/produtos/valor/{valor_unitario}")
+    @ApiOperation(value = "Retorna uma lista de produtos com base no valor unitário")
+    public Produto listaProduto(@PathVariable(value = "valor_unitario") BigDecimal valor_unitario) {
+        return produtoRepository.findByValorUnitario(valor_unitario);
     }
 
     @PostMapping("/produtos")
