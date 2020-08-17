@@ -30,6 +30,12 @@ public class ProdutoApiResource {
         return produtoRepository.findById(id);
     }
 
+    @GetMapping("/produtos/nome/{nome}")
+    @ApiOperation(value = "Retorna um produto do estoque")
+    public Produto listaProduto(@PathVariable(value = "nome") String nome) {
+        return produtoRepository.findByNome(nome);
+    }
+
     @PostMapping("/produtos")
     @ApiOperation(value = "Insere um produto")
     public Produto salvaProduto(@RequestBody Produto produto){
