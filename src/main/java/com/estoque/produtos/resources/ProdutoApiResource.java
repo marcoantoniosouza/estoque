@@ -33,13 +33,13 @@ public class ProdutoApiResource {
 
     @GetMapping("/produtos/nome/{nome}")
     @ApiOperation(value = "Retorna uma lista de produtos com base no nome do produto")
-    public List<Produto> listaProdutos(@PathVariable(value = "nome") String nome) {
+    public List<Produto> listarProdutos(@PathVariable(value = "nome") String nome) {
         return (List<Produto>) produtoRepository.findByNome(nome);
     }
 
     @GetMapping("/produtos/valor/{valor_unitario}")
     @ApiOperation(value = "Retorna uma lista de produtos com base no valor unitário")
-    public List<Produto> listaProdutos(@PathVariable(value = "valor_unitario") BigDecimal valor_unitario) {
+    public List<Produto> listarProdutos(@PathVariable(value = "valor_unitario") BigDecimal valor_unitario) {
         return (List<Produto>) produtoRepository.findByValorUnitario(valor_unitario);
     }
 
